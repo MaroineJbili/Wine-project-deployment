@@ -19,15 +19,15 @@
 
 <body>
   <div class=jumbotron text-center >
-    <h1>Prédire la qualité du vin, mode d'emploi  </h1>
+    <h1> Guide Utilisateur pour prédire la qualité du vin  </h1>
   </div>
   <div class="container-lg">
     <div class="h2">
-        De quoi s'agit il ?
+        Descriptif
     </div>
-    Dans le cadre d'un projet  <a href="https://www.jedha.co/formations/bootcamp-full-stack">Jedha</a>, il faut montrer que l'on sait mettre en prod un modèle de machine learning, en l'occurrence ici un algorithme de RandomForestClassifier.
+    Dans le cadre de projet de déploiement  <a href="https://www.jedha.co/formations/bootcamp-full-stack">Jedha</a>, il faut montrer que l'on sait mettre en prod un modèle de machine learning, en l'occurrence ici un algorithme de RandomForestClassifier.
     <br>
-    L'objectif est de prédire la note de qualité d'un vin sur la base d'éléments physico-chimiques.
+    Il s'agit de prédire la note de qualité d'un vin sur la base d'éléments d'entrée physico-chimiques.
     <br>
     <hr/>
 
@@ -37,9 +37,9 @@
   <div class=".container-fluid">
       <div class="container-lg">
           <div class="h2">
-              Sur quelles données de base ?
+              Jeu de données
           </div>
-          Nous supposons que les entrées seront toujours bien formatées avec le type suivant:  <br>
+          Les données d'entrée sont formatées de la manière suivante:  <br>
           <pre>
             <code>
                 #   Column                Non-Null Count  Dtype
@@ -81,7 +81,7 @@
       <hr/>
       <div class="container-lg">
           <div class="h2">
-              Interrogez l'api  sur le endpoint <code>/predict</code>
+              Le endpoint pour interroger l'api est <code>/predict</code>
           </div>
           Ce point d'accès accepte la méthode POST avec des données d'entrée JSON et doit retourner les prédictions.
 
@@ -112,12 +112,10 @@
             <br>
             <pre-scrollable>
                 <code>
-                    $ curl -i -H "Content-Type: application/json" -X POST -d '{"input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]}' https://wine-quality-prediction-21.herokuapp.com/predict
+                    $ curl -i -H "Content-Type: application/json" -X POST -d '{"input": [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]}' https://my-wine1-flask-app.herokuapp.com/predict
 
                 </code>
             </pre-scrollable>
-
-
 
           </div>
 
@@ -131,18 +129,10 @@
           <br>
           <code>
             {
-                "prediction":[6,6]
+                'prediction_0': '6'
               }
           </code>
           <br>
-          <br>
-          En cas d'erreur un message rappelle comment structurer les données d'entrée:
-          <br>
-          <code>
-            {
-                "msg": "il faut envoyer une requete POST de type input_simple = {'input': [[7.0, 0.27, 0.36, 20.7, 0.045, 45.0, 170.0, 1.001, 3.0, 0.45, 8.8]]} "
-              }
-          </code>
 
   </div>
   <br>
