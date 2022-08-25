@@ -1,0 +1,11 @@
+virenv
+*.pyc
+.DS_Store
+.env
+.ipynb_checkpoints
+.ipynb
+
+virenv/
+notebooks/
+.DS_Store/
+$/csv
